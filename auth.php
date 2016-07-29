@@ -243,7 +243,7 @@ class auth_plugin_authplaincas extends DokuWiki_Auth_Plugin {
       @session_start();
       session_destroy();
       $logout_url = DOKU_URL . 'doku.php?id=' . $QUERY;
-      phpCAS::logoutWithRedirectService($logout_url);
+      phpCAS::logoutWithRedirectServiceAndUrl($logout_url, $logout_url);
     }
     else { // dokuwiki logout only
       @session_start();
